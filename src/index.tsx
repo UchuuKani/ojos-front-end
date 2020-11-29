@@ -4,11 +4,7 @@ import { render } from "react-dom";
 import MainContainer from "./components/MainContainer";
 
 const Application: React.FC = () => {
-  return (
-    <>
-      <MainContainer />
-    </>
-  );
+  return <MainContainer />;
 };
 
 render(<Application />, document.getElementById("root"));

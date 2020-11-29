@@ -1,10 +1,17 @@
-import React, { useState, ReactElement } from "react";
+import React, {
+  useState,
+  ReactElement,
+  SyntheticEvent,
+  CSSProperties,
+} from "react";
+
+import { areValidDomains } from "../../utils/areValidDomains";
 
 import TestOptionSelector from "./TestOptionSelector";
 
 const InfoForm: React.FC = (): ReactElement => {
   const [domains, setDomains] = useState<string>("");
-  const [currentTest, setCurrentTest] = useState<string>("test-1");
+  const [currentTest, setCurrentTest] = useState<string>("");
 
   const handleChangeDomains = (
     event: React.ChangeEvent<HTMLInputElement>,
@@ -20,10 +27,19 @@ const InfoForm: React.FC = (): ReactElement => {
     setCurrentTest(currentTest);
   };
 
+  const handleSubmit = (event: SyntheticEvent): void => {
+    event.preventDefault();
+
+    console.log(
+      "testing domain validation",
+      areValidDomains(domains),
+    );
+  };
+
   console.log("current domains", domains);
   console.log("current test", currentTest);
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <label htmlFor="domains">
         Domains (ending in .com)
         <input
@@ -33,11 +49,13 @@ const InfoForm: React.FC = (): ReactElement => {
           onChange={handleChangeDomains}
         />
       </label>
+      <br />
       <label htmlFor="select-tests">
         Select a Test
         <TestOptionSelector handleChange={handleChangeTest} />
       </label>
-      <button type="button">Submit</button>
+      <br />
+      <button type="submit">Submit</button>
     </form>
   );
 };

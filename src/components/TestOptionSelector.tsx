@@ -10,6 +10,7 @@ interface IProps {
 }
 
 export const testOptions: ITest[] = [
+  { name: "---", value: "" },
   { name: "Test 1", value: "test-1" },
   { name: "Test 2", value: "test-2" },
   { name: "Test 3", value: "test-3" },
