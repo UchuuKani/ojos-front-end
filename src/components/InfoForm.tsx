@@ -55,7 +55,9 @@ const InfoForm: React.FC = (): ReactElement => {
         <TestOptionSelector handleChange={handleChangeTest} />
       </label>
       <br />
-      <button type="submit">Submit</button>
+      <button className="border p-1.5 shadow" type="submit">
+        Submit
+      </button>
     </form>
   );
 };

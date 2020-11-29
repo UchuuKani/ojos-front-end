@@ -21,16 +21,13 @@ const initialState = {};
 // at first, show the form. When user submits the form, render a different component and don't show form anymore
 // logic to reset form?
 
-const testStyle = {
-  backgroundColor: "lightblue",
-};
-
 const MainContainer: React.FC = (): ReactElement => {
   // const [state, send] = useReducer(initReducer, initialState);
   return (
-    <div style={testStyle}>
+    <main>
+      <h1>Test Creator for Ojos</h1>
       <InfoForm />
-    </div>
+    </main>
   );
 };
 
