@@ -1,3 +1,5 @@
+
+// https://stackoverflow.com/questions/26093545/how-to-validate-domain-name-using-regex - potential regex for this use
 const isValidDomain = (url: string): boolean => {
   return url.length > 1 ? true : false;
 };

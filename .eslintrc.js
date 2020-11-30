@@ -35,7 +35,7 @@ module.exports = {
     "prettier/prettier": "error",
     "no-use-before-define": "off",
     "@typescript-eslint/no-use-before-define": ["error"],
-    "no-unused-vars": ["warn", "always"],
-    "no-array-index-key": true,
+    "no-unused-vars": "warn",
+    "react/prop-types": [0],
   },
 };

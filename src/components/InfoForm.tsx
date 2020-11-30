@@ -1,11 +1,6 @@
-import React, {
-  useState,
-  ReactElement,
-  SyntheticEvent,
-  CSSProperties,
-} from "react";
+import React, { useState, ReactElement, SyntheticEvent } from "react";
 
-import { areValidDomains } from "../../utils/areValidDomains";
+import { areValidDomains } from "../utils/areValidDomains";
 
 import TestOptionSelector from "./TestOptionSelector";
 
@@ -39,25 +34,36 @@ const InfoForm: React.FC = (): ReactElement => {
   console.log("current domains", domains);
   console.log("current test", currentTest);
   return (
-    <form onSubmit={handleSubmit}>
-      <label htmlFor="domains">
-        Domains (ending in .com)
-        <input
-          type="text"
-          name="domains"
-          value={domains}
-          onChange={handleChangeDomains}
-        />
-      </label>
-      <br />
-      <label htmlFor="select-tests">
-        Select a Test
-        <TestOptionSelector handleChange={handleChangeTest} />
-      </label>
-      <br />
-      <button className="border p-1.5 shadow" type="submit">
-        Submit
-      </button>
+    <form
+      onSubmit={handleSubmit}
+      className="m-5 rounded bg-green-100"
+    >
+      <div className="py-2 m-5">
+        <label htmlFor="domains">
+          Domains (ending in .com)
+          <input
+            type="text"
+            name="domains"
+            value={domains}
+            onChange={handleChangeDomains}
+            className="border-2 m-2 border-gray-500"
+          />
+        </label>
+      </div>
+      <div className="py-2 m-5">
+        <label htmlFor="select-tests">
+          Select a Test
+          <TestOptionSelector handleChange={handleChangeTest} />
+        </label>
+      </div>
+      <div className="py-2 flex justify-center items-center m-5">
+        <button
+          className="border-2 border-black p-1.5 w-1/4"
+          type="submit"
+        >
+          Submit
+        </button>
+      </div>
     </form>
   );
 };

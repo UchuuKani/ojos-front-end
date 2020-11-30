@@ -1,6 +1,7 @@
 import React, { useReducer, ReactElement } from "react";
 
 import InfoForm from "./InfoForm";
+import InfoFormAdded from "./InfoFormClickToAddFields";
 
 interface IState {
   domains: string[];
@@ -24,9 +25,10 @@ const initialState = {};
 const MainContainer: React.FC = (): ReactElement => {
   // const [state, send] = useReducer(initReducer, initialState);
   return (
-    <main>
-      <h1>Test Creator for Ojos</h1>
+    <main className="container mx-auto px-4 py-4 flex justify-center items-center flex-col">
+      <h1 className="m-5">Test Creator for Ojos</h1>
       <InfoForm />
+      <InfoFormAdded />
     </main>
   );
 };
